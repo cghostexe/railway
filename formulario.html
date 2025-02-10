@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Salud Mental</title>
+    <link rel="stylesheet" href="/static/css/formulario.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="form-container">
+        <h1>Evaluación de Salud Mental</h1>
+        <p class="intro-text">Cuéntanos cómo te has estado sintiendo últimamente. Esta información nos ayudará a ofrecerte apoyo personalizado y ayudarte a mejorar tu bienestar.</p>
+
+        <form id="mental-health-form">
+            <div class="form-group">
+                <label for="sentimientos">¿Cómo te has sentido últimamente?</label>
+                <textarea id="sentimientos" name="sentimientos" rows="4" placeholder="Escribe aquí cómo te has sentido..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="estres">¿Cuánto estrés crees que has experimentado recientemente?</label>
+                <div class="stress-scale">
+                    <label><input type="radio" name="estres" value="1"> 1</label>
+                    <label><input type="radio" name="estres" value="2"> 2</label>
+                    <label><input type="radio" name="estres" value="3"> 3</label>
+                    <label><input type="radio" name="estres" value="4"> 4</label>
+                    <label><input type="radio" name="estres" value="5"> 5</label>
+                    <label><input type="radio" name="estres" value="6"> 6</label>
+                    <label><input type="radio" name="estres" value="7"> 7</label>
+                    <label><input type="radio" name="estres" value="8"> 8</label>
+                    <label><input type="radio" name="estres" value="9"> 9</label>
+                    <label><input type="radio" name="estres" value="10"> 10</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="miedos">¿Has sentido miedo o ansiedad en los últimos días?</label>
+                <select id="miedos" name="miedos">
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a veces">A veces</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>¿Sientes que tienes el apoyo de alguien cercano?</label>
+                <div class="radio-group">
+                    <input type="radio" id="apoyo_si" name="apoyo" value="si" required>
+                    <label for="apoyo_si">Sí</label>
+                    <input type="radio" id="apoyo_no" name="apoyo" value="no">
+                    <label for="apoyo_no">No</label>
+                </div>
+            </div>            
+
+            <div class="form-group">
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí cualquier comentario adicional..."></textarea>
+            </div>
+
+            <!-- Cambiado el tipo de botón -->
+            <button type="submit" id="submit-btn">Enviar</button>
+        </form>
+    </div>
+
+    <script src="/static/js/formulario.js"></script>
+    
+    <a href="/index.html" class="regresar-btn">Regresar</a>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Respuesta de la IA</h2>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+</body>
+</html>
